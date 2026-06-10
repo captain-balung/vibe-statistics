@@ -104,3 +104,89 @@
   display: block;
   margin: 16px 0;
 }
+
+/* 標準差圖解（F-DESC-01） */
+.field-label {
+  display: block;
+  font-size: 14px;
+  color: #586051;
+  margin: 24px 0 6px;
+}
+
+.data-input {
+  width: 100%;
+  max-width: 640px;
+  padding: 12px;
+  border: 1px solid #cdd2c0;
+  border-radius: 12px;
+  font: 16px/1.5 ui-monospace, Consolas, monospace;
+  resize: vertical;
+}
+
+.data-input:focus {
+  outline: 2px solid #639922;
+  border-color: #639922;
+}
+
+.error-note {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #fbeae8;
+  color: #c0392b;
+  font-size: 14px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+
+@media (max-width: 720px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat-card {
+  padding: 16px;
+  border: 1px solid #e5e8dd;
+  border-radius: 16px;
+  background: #fff;
+  text-align: center;
+}
+
+.stat-card--highlight {
+  background: #eaf3de;
+  border-color: #97c459;
+}
+
+.stat-value {
+  font: 600 28px/1.2 ui-monospace, Consolas, monospace;
+  color: #27500a;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #8b917f;
+}
+
+.explain {
+  margin: 28px 0;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #eaf3de;
+  color: #21261b;
+}
+
+.explain strong {
+  color: #27500a;
+}
+
+.explain p {
+  margin: 8px 0 0;
+}

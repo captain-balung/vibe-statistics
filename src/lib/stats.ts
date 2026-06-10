@@ -31,6 +31,43 @@ export function standardDeviation(xs: number[]): number {
   return Math.sqrt(variance(xs))
 }
 
+/** Pearson 相關係數 r */
+export function pearsonR(xs: number[], ys: number[]): number {
+  const n = Math.min(xs.length, ys.length)
+  if (n < 2) return NaN
+  const mx = mean(xs.slice(0, n))
+  const my = mean(ys.slice(0, n))
+  let sxy = 0
+  let sxx = 0
+  let syy = 0
+  for (let i = 0; i < n; i++) {
+    const dx = xs[i] - mx
+    const dy = ys[i] - my
+    sxy += dx * dy
+    sxx += dx * dx
+    syy += dy * dy
+  }
+  const denom = Math.sqrt(sxx * syy)
+  return denom === 0 ? NaN : sxy / denom
+}
+
+/** 最小平方線性回歸：回傳 { slope, intercept }（y = slope·x + intercept） */
+export function linearRegression(xs: number[], ys: number[]): { slope: number; intercept: number } {
+  const n = Math.min(xs.length, ys.length)
+  if (n < 2) return { slope: NaN, intercept: NaN }
+  const mx = mean(xs.slice(0, n))
+  const my = mean(ys.slice(0, n))
+  let sxy = 0
+  let sxx = 0
+  for (let i = 0; i < n; i++) {
+    sxy += (xs[i] - mx) * (ys[i] - my)
+    sxx += (xs[i] - mx) ** 2
+  }
+  const slope = sxx === 0 ? NaN : sxy / sxx
+  const intercept = my - slope * mx
+  return { slope, intercept }
+}
+
 /**
  * 產生 n 筆常態分佈整數資料（Box-Muller）。注意：此為產生器（用到亂數，非純函式）。
  */

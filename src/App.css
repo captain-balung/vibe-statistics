@@ -311,7 +311,37 @@
 }
 
 .actions-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   margin: 20px 0;
+}
+
+/* 回歸版面：散佈圖 + 數值欄 */
+.reg-layout {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.stats-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 160px;
+}
+
+.stats-col .stat-card {
+  text-align: left;
+}
+
+.explain--coral {
+  background: #faece7;
+}
+
+.explain--coral strong {
+  color: #993c1d;
 }
 
 @media (max-width: 720px) {

@@ -24,4 +24,5 @@ export default function ToolTabs({ tabs }: { tabs: Tab[] }) {
 export const DESCRIPTIVE_TABS: Tab[] = [
   { to: '/descriptive/stdev', label: '標準差圖解' },
   { to: '/descriptive/zscore', label: 'Z 分數換算' },
+  { to: '/descriptive/normal', label: '常態模擬' },
 ]

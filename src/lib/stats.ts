@@ -32,6 +32,42 @@ export function standardDeviation(xs: number[]): number {
 }
 
 /**
+ * 產生 n 筆常態分佈整數資料（Box-Muller）。注意：此為產生器（用到亂數，非純函式）。
+ */
+export function genNormalIntegers(n: number, mu: number, sigma: number): number[] {
+  const out: number[] = []
+  for (let i = 0; i < n; i++) {
+    let u1 = Math.random()
+    const u2 = Math.random()
+    if (u1 < 1e-12) u1 = 1e-12
+    const z = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2)
+    out.push(Math.round(mu + sigma * z))
+  }
+  return out
+}
+
+/** 直方圖分箱（純函式）：回傳每箱標籤與計數 */
+export function histogram(xs: number[], bins = 12): { labels: string[]; counts: number[] } {
+  if (xs.length === 0) return { labels: [], counts: [] }
+  const lo = Math.min(...xs)
+  const hi = Math.max(...xs)
+  if (lo === hi) return { labels: [`${lo}`], counts: [xs.length] }
+  const width = (hi - lo) / bins
+  const counts = new Array(bins).fill(0)
+  for (const x of xs) {
+    let b = Math.floor((x - lo) / width)
+    if (b >= bins) b = bins - 1
+    if (b < 0) b = 0
+    counts[b]++
+  }
+  const labels = counts.map((_, i) => {
+    const a = lo + i * width
+    return Number(a.toFixed(1)).toString()
+  })
+  return { labels, counts }
+}
+
+/**
  * 解析使用者輸入的數列：以逗號、空白或換行分隔。
  * 回傳成功解析的數值與「無法辨識的字串」清單（供 UI 提示，不靜默吞掉）。
  */

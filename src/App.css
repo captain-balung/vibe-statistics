@@ -262,6 +262,58 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* 參數列、按鈕 */
+.param-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.param-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #586051;
+}
+
+.num-input--sm {
+  width: 110px;
+  font-size: 15px;
+  padding: 8px 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #639922;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #97c459;
+}
+
+.btn--secondary {
+  background: #fff;
+  color: #3b6d11;
+  border: 1px solid #cdd2c0;
+}
+
+.btn--secondary:hover {
+  background: #eaf3de;
+}
+
+.actions-row {
+  margin: 20px 0;
+}
+
 @media (max-width: 720px) {
   .stats-grid--3 {
     grid-template-columns: 1fr;

@@ -11,6 +11,7 @@ import Casino from './pages/units/probability/Casino'
 import FixedBet from './pages/units/probability/FixedBet'
 import Martingale from './pages/units/probability/Martingale'
 import SicBo from './pages/units/probability/SicBo'
+import ZTest from './pages/units/ZTest'
 import UnitPlaceholder from './pages/units/UnitPlaceholder'
 import './App.css'
 
@@ -36,8 +37,10 @@ function App() {
         <Route path="/probability/martingale" element={<Martingale />} />
         <Route path="/probability/sicbo" element={<SicBo />} />
 
+        {/* Z 檢定練習 */}
+        <Route path="/ztest" element={<ZTest />} />
+
         {/* 尚未開發 */}
-        <Route path="/ztest" element={<UnitPlaceholder title="Z 檢定練習" />} />
         <Route path="/toolbox" element={<UnitPlaceholder title="Excel 工具箱" />} />
       </Route>
     </Routes>

@@ -521,6 +521,155 @@
   padding: 2px 8px;
 }
 
+/* 導覽列右側 */
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn--sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* 卡片 */
+.card {
+  background: #fff;
+  border: 1px solid #e5e8dd;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card--ai {
+  background: #eaf3de;
+  border-color: #97c459;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #586051;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.check-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 8px 0 12px;
+  font-size: 14px;
+}
+
+.check-ok {
+  color: #27500a;
+  font-weight: 600;
+}
+
+.check-no {
+  color: #d85a30;
+  font-weight: 600;
+}
+
+.ai-feedback {
+  margin-top: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #cdd2c0;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+/* Modal */
+.modal-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(33, 38, 27, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px 28px;
+  width: 500px;
+  max-width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-head h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.modal-close {
+  border: none;
+  background: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #8b917f;
+}
+
+.modal-msg {
+  margin: 10px 0 0;
+  color: #27500a;
+  font-size: 14px;
+}
+
+.modal-note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: #8b917f;
+  line-height: 1.6;
+}
+
+.key-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.key-status {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 @media (max-width: 720px) {
   .stats-grid--3 {
     grid-template-columns: 1fr;

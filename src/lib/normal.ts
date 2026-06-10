@@ -75,3 +75,22 @@ export function zToPercentile(z: number): number {
 export function percentileToZ(percentile: number): number {
   return normInv(percentile / 100)
 }
+
+export type Tail = 'two' | 'left' | 'right'
+
+/** 單樣本 Z 檢定（已知母體標準差）。回傳標準誤、Z 統計量、p 值。 */
+export function zTestOneSample(
+  xbar: number,
+  mu0: number,
+  sigma: number,
+  n: number,
+  tail: Tail,
+): { se: number; z: number; p: number } {
+  const se = sigma / Math.sqrt(n)
+  const z = (xbar - mu0) / se
+  let p: number
+  if (tail === 'two') p = 2 * (1 - normCdf(Math.abs(z)))
+  else if (tail === 'left') p = normCdf(z)
+  else p = 1 - normCdf(z)
+  return { se, z, p }
+}

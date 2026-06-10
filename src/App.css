@@ -1,24 +1,47 @@
-/* Phase 0 骨架版面。暫用中性樣式，正式導覽列與設計系統於 0.3.3+ 取代。 */
+/* Phase 0 骨架版面。暫用中性 + 主色草綠，正式設計系統於後續 phase 取代。 */
 .app-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.skeleton-nav {
+.nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
   height: 64px;
   padding: 0 32px;
   background: #fff;
   border-bottom: 1px solid #e5e8dd;
 }
 
-.skeleton-nav .brand {
+.nav .brand {
   font-weight: 700;
   font-size: 19px;
   color: #3b6d11;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-link {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #586051;
+}
+
+.nav-link:hover {
+  background: #eaf3de;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background: #eaf3de;
+  color: #27500a;
+  font-weight: 500;
 }
 
 .app-main {
@@ -32,6 +55,11 @@
 .page h1 {
   font-size: 36px;
   margin: 12px 0 16px;
+}
+
+.page h2 {
+  font-size: 22px;
+  margin: 32px 0 12px;
 }
 
 .pill {
@@ -66,4 +94,13 @@
 
 .unit-list li {
   margin: 8px 0;
+}
+
+.formula {
+  font-size: 17px;
+}
+
+.formula--block {
+  display: block;
+  margin: 16px 0;
 }

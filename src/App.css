@@ -190,3 +190,80 @@
 .explain p {
   margin: 8px 0 0;
 }
+
+/* 子工具分頁 */
+.tool-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #e5e8dd;
+  margin: 8px 0 8px;
+}
+
+.tool-tab {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #586051;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tool-tab:hover {
+  text-decoration: none;
+  background: #f6f8f2;
+}
+
+.tool-tab.active {
+  background: #eaf3de;
+  color: #27500a;
+  border-bottom-color: #639922;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+}
+
+/* segmented 切換 */
+.segmented {
+  display: inline-flex;
+  border: 1px solid #cdd2c0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 16px 0 4px;
+}
+
+.seg {
+  padding: 8px 18px;
+  font-size: 14px;
+  border: none;
+  background: #fff;
+  color: #586051;
+  cursor: pointer;
+}
+
+.seg.active {
+  background: #639922;
+  color: #fff;
+}
+
+/* 數字輸入 */
+.num-input {
+  display: block;
+  width: 200px;
+  padding: 10px 12px;
+  border: 1px solid #cdd2c0;
+  border-radius: 12px;
+  font: 17px/1.4 ui-monospace, Consolas, monospace;
+}
+
+.num-input:focus {
+  outline: 2px solid #639922;
+  border-color: #639922;
+}
+
+.stats-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 720px) {
+  .stats-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}

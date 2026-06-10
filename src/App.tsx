@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import EntryPage from './pages/EntryPage'
 import DescriptiveStdev from './pages/units/DescriptiveStdev'
+import ZScore from './pages/units/ZScore'
 import UnitPlaceholder from './pages/units/UnitPlaceholder'
 import './App.css'
 
@@ -12,6 +13,7 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<EntryPage />} />
         <Route path="/descriptive/stdev" element={<DescriptiveStdev />} />
+        <Route path="/descriptive/zscore" element={<ZScore />} />
         <Route path="/probability" element={<UnitPlaceholder title="機率模擬" />} />
         <Route path="/ztest" element={<UnitPlaceholder title="Z 檢定練習" />} />
         <Route path="/toolbox" element={<UnitPlaceholder title="Excel 工具箱" />} />

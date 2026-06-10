@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import ToolTabs, { DESCRIPTIVE_TABS } from '../../components/ToolTabs'
 import Formula from '../../components/Formula'
 import BarChart from '../../components/BarChart'
+import Stat from '../../components/Stat'
 import {
   parseNumbers,
   mean,
@@ -10,18 +12,12 @@ import {
   deviations,
 } from '../../lib/stats'
 
-// F-DESC-01 標準差互動圖解（Phase 0 MVP）。
-// 貼資料 → 平均/平均離差/變異數/標準差 + 離差長條圖 + 白話解釋。
-// 所有數值由 lib/stats 即時運算（不造假）；資料問題以紅字提示（不靜默算錯）。
-
+// F-DESC-01 標準差互動圖解。所有數值由 lib/stats 即時運算（不造假）；資料問題以紅字提示。
 const DEFAULT_DATA = '2, 4, 4, 4, 5, 5, 7, 9'
 const GREEN = '#639922'
 const CORAL = '#D85A30'
 
-function fmt(n: number): string {
-  // 最多四位小數、去掉尾零
-  return Number(n.toFixed(4)).toString()
-}
+const fmt = (n: number) => Number(n.toFixed(4)).toString()
 
 export default function DescriptiveStdev() {
   const [text, setText] = useState(DEFAULT_DATA)
@@ -36,7 +32,9 @@ export default function DescriptiveStdev() {
 
   return (
     <section className="page">
-      <h1>描述統計 · 標準差圖解</h1>
+      <h1>描述統計</h1>
+      <ToolTabs tabs={DESCRIPTIVE_TABS} />
+      <h2>標準差圖解</h2>
       <p className="lead">
         貼上一組數字，即時看到它的平均、離散程度，以及每筆資料離平均有多遠。
       </p>
@@ -105,14 +103,5 @@ export default function DescriptiveStdev() {
         </>
       )}
     </section>
-  )
-}
-
-function Stat({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
-  return (
-    <div className={highlight ? 'stat-card stat-card--highlight' : 'stat-card'}>
-      <div className="stat-value">{value}</div>
-      <div className="stat-label">{label}</div>
-    </div>
   )
 }

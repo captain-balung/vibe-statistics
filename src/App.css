@@ -759,6 +759,96 @@
   }
 }
 
+/* 入口頁 */
+.entry {
+  text-align: center;
+  padding: 24px 0 40px;
+}
+
+.entry-title {
+  font-size: 44px;
+  margin: 12px 0 16px;
+  color: #21261b;
+}
+
+.entry-lead {
+  font-size: 18px;
+  color: #586051;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.trust-points {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0 36px;
+  font-size: 13px;
+  color: #8b917f;
+}
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  text-align: left;
+}
+
+@media (max-width: 720px) {
+  .entry-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.entry-card {
+  display: block;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e5e8dd;
+  border-radius: 20px;
+  color: inherit;
+  transition: box-shadow 0.14s, border-color 0.14s;
+}
+
+.entry-card:hover {
+  text-decoration: none;
+  border-color: #97c459;
+  box-shadow: 0 10px 24px rgba(99, 153, 34, 0.12);
+}
+
+.entry-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry-card-head h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #27500a;
+}
+
+.entry-card .arrow {
+  color: #639922;
+  font-size: 20px;
+}
+
+.entry-card-desc {
+  margin: 8px 0 14px;
+  color: #586051;
+  font-size: 14px;
+}
+
+.entry-card-tools {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px dashed #e5e8dd;
+  font-size: 12px;
+  color: #8b917f;
+  font-family: ui-monospace, Consolas, monospace;
+}
+
 @media (max-width: 720px) {
   .stats-grid--3 {
     grid-template-columns: 1fr;

@@ -1,8 +1,9 @@
 import { Link, NavLink, Outlet } from 'react-router-dom'
 
 // 全站共用外殼 + 導覽列（F-CORE-02）。正式設計系統樣式於後續 phase 套用。
+// 連到各單元根路徑（不設 end），子分頁切換時頂層單元仍正確高亮
 const UNITS = [
-  { to: '/descriptive/stdev', label: '描述統計' },
+  { to: '/descriptive', label: '描述統計' },
   { to: '/probability', label: '機率模擬' },
   { to: '/ztest', label: 'Z 檢定練習' },
   { to: '/toolbox', label: 'Excel 工具箱' },

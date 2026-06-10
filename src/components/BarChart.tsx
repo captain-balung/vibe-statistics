@@ -30,6 +30,7 @@ export default function BarChart({ labels, values, label = '數值', colors, beg
       }}
       options={{
         responsive: true,
+        animation: false,
         plugins: { legend: { display: false } },
         scales: { y: { beginAtZero } },
       }}

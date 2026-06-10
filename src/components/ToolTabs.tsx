@@ -27,3 +27,13 @@ export const DESCRIPTIVE_TABS: Tab[] = [
   { to: '/descriptive/normal', label: '常態模擬' },
   { to: '/descriptive/regression', label: '相關與回歸' },
 ]
+
+// 機率模擬單元的子分頁
+export const PROBABILITY_TABS: Tab[] = [
+  { to: '/probability/bellcurve', label: '鐘形曲線' },
+  { to: '/probability/binomial', label: '二項分配' },
+  { to: '/probability/casino', label: '賭場優勢' },
+  { to: '/probability/fixedbet', label: '固定注模擬' },
+  { to: '/probability/martingale', label: '馬丁格爾' },
+  { to: '/probability/sicbo', label: '骰寶' },
+]

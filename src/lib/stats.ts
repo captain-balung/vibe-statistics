@@ -31,6 +31,17 @@ export function standardDeviation(xs: number[]): number {
   return Math.sqrt(variance(xs))
 }
 
+/** 組合數 C(n, k)（乘法式，避免階乘溢位） */
+export function choose(n: number, k: number): number {
+  if (k < 0 || k > n) return 0
+  k = Math.min(k, n - k)
+  let result = 1
+  for (let i = 0; i < k; i++) {
+    result = (result * (n - i)) / (i + 1)
+  }
+  return Math.round(result)
+}
+
 /** Pearson 相關係數 r */
 export function pearsonR(xs: number[], ys: number[]): number {
   const n = Math.min(xs.length, ys.length)

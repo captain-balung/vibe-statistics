@@ -1,0 +1,26 @@
+/* Phase 0 骨架基礎樣式。正式設計系統 token（草綠主色等）於 0.3.3+ 導入。
+   只做亮色模式（spec 明確不做暗色模式）。 */
+:root {
+  font-family: system-ui, 'Noto Sans TC', sans-serif;
+  line-height: 1.6;
+  color: #21261b;
+  background: #f6f8f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: #3b6d11;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

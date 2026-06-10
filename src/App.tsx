@@ -12,7 +12,7 @@ import FixedBet from './pages/units/probability/FixedBet'
 import Martingale from './pages/units/probability/Martingale'
 import SicBo from './pages/units/probability/SicBo'
 import ZTest from './pages/units/ZTest'
-import UnitPlaceholder from './pages/units/UnitPlaceholder'
+import Toolbox from './pages/units/Toolbox'
 import './App.css'
 
 function App() {
@@ -40,8 +40,8 @@ function App() {
         {/* Z 檢定練習 */}
         <Route path="/ztest" element={<ZTest />} />
 
-        {/* 尚未開發 */}
-        <Route path="/toolbox" element={<UnitPlaceholder title="Excel 工具箱" />} />
+        {/* Excel 工具箱 */}
+        <Route path="/toolbox" element={<Toolbox />} />
       </Route>
     </Routes>
   )

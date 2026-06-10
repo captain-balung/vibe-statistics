@@ -670,6 +670,95 @@
   align-items: center;
 }
 
+/* Excel 工具箱 */
+.dropzone {
+  border: 2px dashed #cdd2c0;
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  background: #fff;
+  margin: 16px 0;
+  color: #586051;
+}
+
+.file-status {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.col-type {
+  font-size: 11px;
+  font-weight: 400;
+  color: #8b917f;
+}
+
+.test-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+
+@media (max-width: 640px) {
+  .test-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.test-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  padding: 14px 16px;
+  border: 1px solid #cdd2c0;
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.test-card span {
+  font-size: 13px;
+  color: #8b917f;
+}
+
+.test-card.active {
+  background: #eaf3de;
+  border-color: #97c459;
+}
+
+.result-head {
+  margin: 4px 0 12px;
+}
+
+.stats-grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.vs-fade-in {
+  animation: vsFade 0.22s ease both;
+}
+
+@keyframes vsFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vs-fade-in {
+    animation: none;
+  }
+}
+
 @media (max-width: 720px) {
   .stats-grid--3 {
     grid-template-columns: 1fr;
